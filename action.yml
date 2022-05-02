@@ -1,0 +1,22 @@
+name: 'Branch Name Validation'
+description: 'The GitHub workflow action for validating PR branch names with regular expression'
+inputs:
+  ignored_prefixes:
+    description: 'Comma separated list of prefixes to ignore. eg: rc,release-candidate,hotfix'
+    required: false
+    default: ''
+  min_length:
+    description: 'Minimum length of branch name'
+    required: false
+    default: '1'
+  regex:
+    description: 'Regex to validate PR branch name. Only letters and numbers allowed.'
+    required: false
+    default: '^[a-z]+_\d+_[a-z0-9]+$'
+
+runs:
+  using: 'node16'
+  main: './branch-name-validation-action.js'
+branding:
+  icon: 'alert-triangle'
+  color: 'gray-dark'
