@@ -12,7 +12,7 @@ inputs:
   regex:
     description: 'Regex to validate PR branch name. Only letters and numbers allowed.'
     required: false
-    default: '^[a-z]+_\d+_[a-z0-9]+$'
+    default: '^[a-z]+_\d+_[a-z0-9_]+$'
 
 runs:
   using: 'node16'
